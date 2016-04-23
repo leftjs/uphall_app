@@ -17,7 +17,6 @@ import * as FoodList from './../components/home/foodList'
 
 var ConnectedFoodList = connectComponent(FoodList)
 
-import fetch from 'isomorphic-fetch'
 
 
 import autoPlay from '../../node_modules/react-swipeable-views/lib/autoPlay'
@@ -51,6 +50,9 @@ class home extends Component{
 	}
 
 
+
+
+
 	render(){
 		const {navigator} = this.props
 
@@ -58,37 +60,40 @@ class home extends Component{
 			<View
 				style={styles.container}
 			>
+
+
 				<View>
-					<AutoPalySwipeableViews
-						index={this.state.index}
-						style={styles.slideContainer}
-						onChangeIndex={this.handleChangeIndex}
-						resistance={true}
-						interval={3000}
+				<AutoPalySwipeableViews
+					index={this.state.index}
+				style={styles.slideContainer}
+				onChangeIndex={this.handleChangeIndex}
+				resistance={true}
+				interval={3000}
 					>
 
-						<View style={[styles.slide, styles.slide1]}>
-							<Text style={styles.text}>
-								广告1
-							</Text>
-						</View>
-						<View style={[styles.slide, styles.slide2]}>
-							<Text style={styles.text}>
-								广告2
-							</Text>
-						</View>
-						<View style={[styles.slide, styles.slide3]}>
-							<Text style={styles.text}>
-								广告3
-							</Text>
-						</View>
-					</AutoPalySwipeableViews>
-					<Pagination
-						dots={3}
-						index={this.state.index}
-						onChangeIndex={this.handleChangeIndex}
-					/>
+					<View style={[styles.slide, styles.slide1]}>
+						<Text style={styles.text}>
+							广告1
+						</Text>
+					</View>
+					<View style={[styles.slide, styles.slide2]}>
+				<Text style={styles.text}>
+					广告2
+				</Text>
 				</View>
+				<View style={[styles.slide, styles.slide3]}>
+					<Text style={styles.text}>
+						广告3
+					</Text>
+				</View>
+				</AutoPalySwipeableViews>
+				<Pagination
+					dots={3}
+					index={this.state.index}
+					onChangeIndex={this.handleChangeIndex}
+				/>
+				</View>
+
 				<ScrollableTabView
 					tabBarUnderlineColor="green"
 					tabBarActiveTextColor="green"

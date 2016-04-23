@@ -31,7 +31,7 @@ const options = {
 			label: '用户名',
 			placeholder: '请输入用户名',
 			error: '用户名未填写',
-			autoFocus: true
+			autoFocus: true,
 		},
 		password: {
 			label: '密码',

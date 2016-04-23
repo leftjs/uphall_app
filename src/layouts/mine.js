@@ -9,8 +9,13 @@ import React, {
 	StyleSheet,
 	Image,
 	TouchableHighlight,
-	AlertIOS
+	AlertIOS,
+	Linking,
+	Dimensions,
+	ScrollView
 } from 'react-native'
+
+const {width, height} = Dimensions.get('window')
 
 import Icon from 'react-native-vector-icons/Ionicons'
 import * as login from './login'
@@ -27,8 +32,8 @@ const imagePickerOptions = {
 	mediaType: 'photo', // 'photo' or 'video'
 	videoQuality: 'high', // 'low', 'medium', or 'high'
 	durationLimit: 10, // video recording max time in seconds
-	maxWidth: 100, // photos only
-	maxHeight: 100, // photos only
+	maxWidth: 400, // photos only
+	maxHeight: 400, // photos only
 	quality: 1, // 0 to 1, photos only
 	allowsEditing: true, // Built in functionality to resize/reposition the image after selection
 };
@@ -43,9 +48,22 @@ export default class mine extends Component{
 			<View style={styles.container}>
 				{this._renderAvatar()}
 				{this._renderName()}
-
+				<View style={{width,height: 1, backgroundColor:"lightgray", marginTop: 10}}></View>
+				{this._renderAbout()}
 			</View>
 
+		)
+	}
+
+
+	_renderAbout = () => {
+		return (
+			<View style={{alignItems:"center",marginTop: 20}}>
+				<Text style={{fontSize: 20}}>项目介绍</Text>
+				<Text style={styles.about}>        项目基于Facebook React Native构建,一款模拟大学食堂订餐、菜肴分享的简易APP,仅供毕设使用,项目开源,Github地址:</Text>
+				<TouchableHighlight underlayColor="transparent" onPress={this._linkingClick}><Text style={[{textDecorationLine:'underline', color: 'green'},styles.about]}>{`https://github.com/leftjs/uphall_app`}</Text></TouchableHighlight>
+				<Text style={styles.about}>欢迎star&fork&PR&issue~~~~~</Text>
+			</View>
 		)
 	}
 
@@ -75,6 +93,10 @@ export default class mine extends Component{
 		return (
 			<Text style={styles.name}>未登录</Text>
 		)
+	}
+
+	_linkingClick = () => {
+		Linking.openURL("https://github.com/leftjs/uphall_app")
 	}
 
 
@@ -179,7 +201,7 @@ const styles = StyleSheet.create({
 		height: avatarWH,
 		borderRadius: avatarWH / 2,
 		borderWidth: 3,
-		borderColor: 'lightgray'
+		borderColor: 'lightgreen'
 	},
 	loginButton: {
 		marginTop: 30,
@@ -187,6 +209,12 @@ const styles = StyleSheet.create({
 		backgroundColor:'green',
 		padding: 5,
 		borderRadius: 5
+	},
+	about: {
+		padding: 20,
+		paddingBottom: 0,
+		paddingTop: 10,
+		fontSize: 17
 	}
 })
 

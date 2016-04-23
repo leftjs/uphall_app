@@ -1,7 +1,7 @@
 import qs from 'query-string';
 import config from '../configs';
 
-
+//import fetch from 'isomorphic-fetch'
 const urlPrefix = config.domain;
 
 
@@ -23,7 +23,7 @@ function filterStatus(res) {
 }
 
 
-export function get(url, params) {
+export function get(url,params) {
 	url = urlPrefix + url;
 	if (params) {
 		url += `?${qs.stringify(params)}`;

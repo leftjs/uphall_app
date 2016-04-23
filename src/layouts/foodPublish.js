@@ -18,7 +18,6 @@ const {width, height}  = Dimensions.get('window')
 
 import t from 'tcomb-form-native'
 import Spinner from 'react-native-loading-spinner-overlay'
-import fetch from 'isomorphic-fetch'
 var ImagePickerManager = require('NativeModules').ImagePickerManager
 var Form = t.form.Form
 
@@ -64,7 +63,8 @@ const options = {
 		price: {
 			label: '单价',
 			placeholder: '请输入单价',
-			error: '单价必须为整数',
+			error: '单价必须为正数',
+			keyboardType: 'decimal-pad'
 		},
 		description: {
 			label: '详情',
@@ -73,7 +73,9 @@ const options = {
 		discount: {
 			label: "折扣",
 			placeholder: "折扣为0~1之间的数值",
-			error: '折扣必须在0~1之间'
+			error: '折扣必须在0~1之间',
+			keyboardType: 'decimal-pad'
+
 		},
 		is_recommended: {
 			label: '是否是推荐菜肴'
@@ -107,8 +109,8 @@ const imagePickerOptions = {
 	mediaType: 'photo', // 'photo' or 'video'
 	videoQuality: 'high', // 'low', 'medium', or 'high'
 	durationLimit: 10, // video recording max time in seconds
-	maxWidth: 100, // photos only
-	maxHeight: 100, // photos only
+	maxWidth: 400, // photos only
+	maxHeight: 400, // photos only
 	quality: 1, // 0 to 1, photos only
 	allowsEditing: true, // Built in functionality to resize/reposition the image after selection
 };
