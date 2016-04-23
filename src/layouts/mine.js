@@ -58,12 +58,12 @@ export default class mine extends Component{
 
 	_renderAbout = () => {
 		return (
-			<View style={{alignItems:"center",marginTop: 20}}>
-				<Text style={{fontSize: 20}}>项目介绍</Text>
+			<ScrollView  style={{marginTop: 20}}>
+				<Text style={{textAlign:'center',fontSize: 20}}>项目介绍</Text>
 				<Text style={styles.about}>        项目基于Facebook React Native构建,一款模拟大学食堂订餐、菜肴分享的简易APP,仅供毕设使用,项目开源,Github地址:</Text>
 				<TouchableHighlight underlayColor="transparent" onPress={this._linkingClick}><Text style={[{textDecorationLine:'underline', color: 'green'},styles.about]}>{`https://github.com/leftjs/uphall_app`}</Text></TouchableHighlight>
 				<Text style={styles.about}>欢迎star&fork&PR&issue~~~~~</Text>
-			</View>
+			</ScrollView>
 		)
 	}
 
@@ -211,6 +211,7 @@ const styles = StyleSheet.create({
 		borderRadius: 5
 	},
 	about: {
+		textAlign: 'center',
 		padding: 20,
 		paddingBottom: 0,
 		paddingTop: 10,
