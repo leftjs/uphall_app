@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
 		height: 60,
 		borderRadius: 30,
 		borderWidth: 1,
-		borderColor: 'grey'
+		borderColor: 'pink'
 	},
 	content: {
 		marginLeft: 10,

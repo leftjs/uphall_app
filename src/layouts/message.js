@@ -58,7 +58,7 @@ class message extends Component{
 		return (
 			<View style={{width, height: height - 64 - 48}}>
 				<ConnectedMessageList></ConnectedMessageList>
-				<View style={{width, height: 40, backgroundColor: 'lightgray', justifyContent: 'center'}}>
+				<View style={{width, height: 40, backgroundColor: 'pink', justifyContent: 'center'}}>
 					<TextInput ref={(view) => this._textInput = view} style={{left: 0, right: 0, height: 40, padding: 5}} placeholder={"请输入内容"} onSubmitEditing={this._returnBtnClick}></TextInput>
 				</View>
 				<KeyboardSpacer topSpacing={-48}/>

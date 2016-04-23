@@ -58,7 +58,10 @@ export default class mine extends Component{
 
 	_renderAbout = () => {
 		return (
-			<ScrollView  style={{marginTop: 20}}>
+			<ScrollView contentInset={{	top: 20,left: 0}} contentOffset={{
+			x: 0,
+			y: -20
+			}}style={{marginBottom: 64 + 48}}>
 				<Text style={{textAlign:'center',fontSize: 20}}>项目介绍</Text>
 				<Text style={styles.about}>        项目基于Facebook React Native构建,一款模拟大学食堂订餐、菜肴分享的简易APP,仅供毕设使用,项目开源,Github地址:</Text>
 				<TouchableHighlight underlayColor="transparent" onPress={this._linkingClick}><Text style={[{textDecorationLine:'underline', color: 'green'},styles.about]}>{`https://github.com/leftjs/uphall_app`}</Text></TouchableHighlight>
