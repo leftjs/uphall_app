@@ -58,7 +58,7 @@ class message extends Component{
 		return (
 			<View style={{width, height: height - 64 - 48}}>
 				<ConnectedMessageList></ConnectedMessageList>
-				<View style={{width, height: 40, backgroundColor: 'pink', justifyContent: 'center'}}>
+				<View style={styles.input}>
 					<TextInput ref={(view) => this._textInput = view} style={{left: 0, right: 0, height: 40, padding: 5}} placeholder={"请输入内容"} onSubmitEditing={this._returnBtnClick}></TextInput>
 				</View>
 				<KeyboardSpacer topSpacing={-48}/>
@@ -66,6 +66,20 @@ class message extends Component{
 		)
 	}
 }
+
+const styles = StyleSheet.create({
+	input: {
+		//width,
+		height: 40,
+		backgroundColor: 'rgba(0,0,0,0.1)',
+		justifyContent: 'center',
+		borderRadius: 10,
+		marginLeft: 10,
+		marginRight: 10,
+	}
+
+})
+
 
 export const LayoutComponent = message
 export function mapStateToProps(state){

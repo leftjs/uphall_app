@@ -50,6 +50,37 @@ class home extends Component{
 	}
 
 
+//<View>
+//<AutoPalySwipeableViews
+//	index={this.state.index}
+//style={styles.slideContainer}
+//onChangeIndex={this.handleChangeIndex}
+//resistance={true}
+//interval={3000}
+//	>
+//
+//	<View style={[styles.slide, styles.slide1]}>
+//		<Text style={styles.text}>
+//			广告1
+//		</Text>
+//	</View>
+//	<View style={[styles.slide, styles.slide2]}>
+//<Text style={styles.text}>
+//	广告2
+//</Text>
+//</View>
+//<View style={[styles.slide, styles.slide3]}>
+//	<Text style={styles.text}>
+//		广告3
+//	</Text>
+//</View>
+//</AutoPalySwipeableViews>
+//<Pagination
+//	dots={3}
+//	index={this.state.index}
+//	onChangeIndex={this.handleChangeIndex}
+///>
+//</View>
 
 
 
@@ -62,37 +93,7 @@ class home extends Component{
 			>
 
 
-				<View>
-				<AutoPalySwipeableViews
-					index={this.state.index}
-				style={styles.slideContainer}
-				onChangeIndex={this.handleChangeIndex}
-				resistance={true}
-				interval={3000}
-					>
 
-					<View style={[styles.slide, styles.slide1]}>
-						<Text style={styles.text}>
-							广告1
-						</Text>
-					</View>
-					<View style={[styles.slide, styles.slide2]}>
-				<Text style={styles.text}>
-					广告2
-				</Text>
-				</View>
-				<View style={[styles.slide, styles.slide3]}>
-					<Text style={styles.text}>
-						广告3
-					</Text>
-				</View>
-				</AutoPalySwipeableViews>
-				<Pagination
-					dots={3}
-					index={this.state.index}
-					onChangeIndex={this.handleChangeIndex}
-				/>
-				</View>
 
 				<ScrollableTabView
 					tabBarUnderlineColor="green"

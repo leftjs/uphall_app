@@ -96,7 +96,6 @@ const options = {
 			label: '地址',
 			placeholder: '请填入详细地址'
 		}
-
 	}
 }
 
