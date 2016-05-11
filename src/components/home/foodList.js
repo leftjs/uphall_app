@@ -89,8 +89,10 @@ class FoodList extends Component {
 				{this._renderPic(rowData.pic_url)}
 				<Text style={styles.name}>{rowData.name}</Text>
 				<View style={styles.likeContainer}>
-					<Icon name="ios-heart-outline" size={20} style={styles.likeIcon} ></Icon>
+					<Icon name="ios-heart" size={20} style={styles.likeIcon} ></Icon>
 					<Text style={styles.like}>{rowData.like}</Text>
+					<Icon name="ios-cart" size={20} style={styles.orderIcon}></Icon>
+					<Text style={styles.order}>{rowData.orderCount}</Text>
 				</View>
 				<Text style={styles.address}>{rowData.address}</Text>
 			</TouchableOpacity>
@@ -137,7 +139,16 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		color: 'gray'
 	},
+	order: {
+		marginLeft: 10,
+		fontSize: 20,
+		color: 'gray'
+	},
 	likeIcon: {
+		marginTop: 3
+	},
+	orderIcon: {
+		marginLeft: 30,
 		marginTop: 3
 	},
 	listView: {
