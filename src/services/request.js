@@ -1,7 +1,7 @@
 import qs from 'query-string';
 import config from '../configs';
 
-//import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch'
 const urlPrefix = config.domain;
 
 
